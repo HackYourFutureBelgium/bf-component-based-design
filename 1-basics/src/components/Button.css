@@ -1,0 +1,7 @@
+.btn {
+  background-color: bisque;
+  color: gray;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 5px 15px;
+}

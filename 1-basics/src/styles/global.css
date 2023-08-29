@@ -1,0 +1,15 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html, body, #root {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  flex-direction: column;
+}
+
