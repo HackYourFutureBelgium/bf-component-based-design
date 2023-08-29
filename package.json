@@ -1,0 +1,17 @@
+{
+  "name": "bf-component-based-design",
+  "version": "1.0.0",
+  "description": "Learn to design, plan and build frontend applications using a Component-Based approach. You will explore the ReactJS library which is designed to make Component-Based design easy and efficient.",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write ./",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.6.4",
+    "prettier": "^3.0.3"
+  }
+}

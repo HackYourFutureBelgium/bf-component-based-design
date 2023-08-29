@@ -1,8 +1,8 @@
 .header {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .image {
-  width: 300px;
+    width: 300px;
 }
