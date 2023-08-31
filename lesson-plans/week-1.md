@@ -3,10 +3,14 @@
 - [What is React](../materials/what-is-react.md)
 - [What is Jsx](../materials/what-is-jsx.md)
 - [Build your first component](../1-basics/)
+- [Manage data inside states](https://reactjs.org/docs/state-and-lifecycle.html)
+- [Understand lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)
+- [Handling events](https://reactjs.org/docs/handling-events.html)
+- [Conditional rendering](https://reactjs.org/docs/conditional-rendering.html)
+- [Handling forms](https://reactjs.org/docs/forms.html)
+- ![Lifecycle diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
 
-## Exercise
+## Some resources
 
-1. Create a basic layout to display the app - Feel free to be creative and find nice design inspiration on internet
-2. Separate your app into different components
-3. Try to prepare some UI element you can reuse (Pokemon card, Button, input,...)
-4. BONUS - Plan the responsiveness
+- ReactJS Beta documentation: [here](https://beta.reactjs.org/)
+- React Bootstrap library: [here](https://react-bootstrap.netlify.app/)
