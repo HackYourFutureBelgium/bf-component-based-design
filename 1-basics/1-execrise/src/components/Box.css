@@ -1,0 +1,13 @@
+.box-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border: 2px black solid;
+}
+
+.box-section p {
+    font-size: 22px;
+}

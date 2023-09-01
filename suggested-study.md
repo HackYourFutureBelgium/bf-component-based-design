@@ -35,6 +35,7 @@ create a fake data from [mockaroo](https://www.mockaroo.com/)
 
 ## React Tutorials
 
+- [React full course bt Dave Gray](https://www.youtube.com/watch?v=RVFAyFWO4go&t=13520s)
 - [4GeeksAcademy](https://github.com/4GeeksAcademy/react-tutorial-exercises)
 - [HackYourFuture Amsterdam](https://github.com/HackYourFuture/react)
 - [HackYourFuture Copenhagen](https://github.com/HackYourFuture-CPH/React)
