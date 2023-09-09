@@ -8,6 +8,8 @@
 - [Conditional rendering](https://reactjs.org/docs/conditional-rendering.html)
 - [Handling forms](https://reactjs.org/docs/forms.html)
 
+## Basic 
+- [Basic](../materials/basic.md)
 ## Some resources
 
 - ReactJS Beta documentation: [here](https://beta.reactjs.org/)
