@@ -194,7 +194,7 @@ const Button = () => {
 };
 ```
 
-## Handle form
+## Handling form
 
 This will work as normal, the form will submit and the page will refresh.
 But this is generally not what we want to happen in React.
@@ -278,11 +278,3 @@ const Car = () => {
   );
 };
 ```
-
-## Projects
-
-1. counter
-2. Calculator
-3. To Do App
-4. Snapshot
-5. E Commerce h3
