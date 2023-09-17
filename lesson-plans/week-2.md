@@ -3,7 +3,7 @@
 - [Component life cycle](../materials/component-life-cycle.md)
 - [useSate hook](../materials/useState-hook.md)
 - [useEffect hook](../materials/component-life-cycle.md)
-- [useContext hook](../materials/component-life-cycle.md)
+- [useContext hook](../materials/useContext-hook.md)
 
 ## Projects
 
