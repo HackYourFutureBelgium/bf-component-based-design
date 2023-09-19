@@ -217,6 +217,9 @@ The wild world of React is full of different ways to structure applications and 
 
 ### Week2
 
+- [Day 6](https://youtu.be/r99x1xleKCg)
+- [Day 7](https://youtu.be/nMQ4IAh-dMw)
+
 ### Week3
 
 </details>
