@@ -1,6 +1,11 @@
 # Week 3
 
+- [React router](../materials/react-router.md)
+
 ## Projects
+
+1. store
+2. Portfolio
 
 ## Some resources
 
