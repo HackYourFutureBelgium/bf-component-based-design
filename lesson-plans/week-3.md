@@ -4,7 +4,7 @@
 
 ## Projects
 
-1. store
+1. fake store
 2. Portfolio
 
 ## Some resources
