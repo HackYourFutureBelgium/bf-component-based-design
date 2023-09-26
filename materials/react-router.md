@@ -204,3 +204,78 @@ const Products = () => {
   );
 };
 ```
+
+### Index Route
+
+In case we want to show one of the nested route component on the parent route
+
+```js
+import { Routes, Route , Link} from 'react-router-dom';
+
+import './App.css';
+
+import Home from './components/Home';
+import About from './components/About';
+import Navbar from './components/Navbar';
+import Products from './components/Products';
+import Features from './components/Features';
+import NewProducts from './components/NewProducts';
+import NoMatch from './components/NoMatch';
+
+const App = () => {
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="products" element={<Products />}>
+            <Route index element={<Features />}>  // see this component on the parent route
+            <Route path="features" element={<Features />}>
+            <Route path="new" element={<NewProducts />}>
+        </Route>
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+    </>
+  );
+};
+```
+
+### Dynamic Routes
+
+```js
+import { Routes, Route, Link } from 'react-router-dom';
+
+import './App.css';
+
+import Home from './components/Home';
+import NoMatch from './components/NoMatch';
+import Users from './components/Users';
+import UserDetails from './components/UserDetails';
+import Admin from './components/Admin';
+
+const App = () => {
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="users" element={<Users />} />
+        <Route path="users/:id" element={<UserDetails />} /> //url params
+        <Route path="users/admin" element={<Admin />} /> // more specif
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+    </>
+  );
+};
+```
+
+### Url Params
+
+```js
+import { useParams } from 'react-router-dom';
+const UserDetails = () => {
+  const { id } = useParams();
+  return <div>User details</div>;
+};
+```
