@@ -200,32 +200,3 @@ The wild world of React is full of different ways to structure applications and 
 
 [TOP](#component-based-design)
 
-## Class recording
-
-<details>
-<summary>expand/collapse</summary>
-<br>
-
-### Week1
-
-- [Day 0](https://youtu.be/HbnlbI6NXBM)
-- [Day 1](https://youtu.be/-Ve6Y-QKAO8)
-- [Day 2](https://youtu.be/yL-iUmyfyOc)
-- [Day 3](https://youtu.be/IJGEhiCfXeI)
-- [Day 4](https://youtu.be/YAbJ_jbUwhk)
-- [Day 5](https://youtu.be/TlMKexxgIZs)
-
-### Week2
-
-- [Day 6](https://youtu.be/r99x1xleKCg)
-- [Day 7](https://youtu.be/nMQ4IAh-dMw)
-- [Day 8](https://youtu.be/fpPdILbNLo8)
-- [Day 10](https://youtu.be/TWJAvKIQBJU)
-
-### Week3
-
-- [Day 11](https://youtu.be/peCLNL5nLAo)
-- [Day 12](https://youtu.be/YEeNfHMvRP4)
-- [Day 13](https://youtu.be/tCZ3D5YdWgQ)
-
-</details>
