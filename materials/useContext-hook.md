@@ -2,44 +2,15 @@
 
 ## Introduction
 
-This README.md file provides a detailed guide on using the `useContext` hook in React. The `useContext` hook is a powerful tool for managing and accessing state across components without the need for prop drilling. Whether you're a React beginner or an experienced developer, this documentation will help you understand and leverage this essential hook.
-
-## Table of Contents
-
-1. [Overview](#overview)
-2. [Basic Usage](#basic-usage)
-3. [Creating a Context](#creating-a-context)
-4. [Consuming a Context](#consuming-a-context)
-5. [Dynamic Context](#dynamic-context)
-6. [Best Practices](#best-practices)
-7. [Additional Resources](#additional-resources)
+The `useContext` hook is a powerful tool for managing and accessing state across components without the need for prop drilling. Whether you're a React beginner or an experienced developer, this documentation will help you understand and leverage this essential hook.
 
 ## Overview
 
 The `useContext` hook allows you to access data or state that is provided by a Context Provider component higher up in the component tree. This enables you to share data between components without the need for passing props through each intermediate component.
 
-## Basic Usage
-
-To use the `useContext` hook, first, you need to import it along with the context you want to consume:
-
-```javascript
-import React, { useContext } from 'react';
-import MyContext from './MyContext'; // Replace with your context file
-```
-
-Inside your functional component, you can consume the context as follows:
-
-```javascript
-function MyComponent() {
-  const contextData = useContext(MyContext);
-
-  // Now, 'contextData' contains the data provided by the Context Provider
-}
-```
-
 ## Creating a Context
 
-To create a context, define it in a separate file, for example, `MyContext.js`:
+To create a context, define it in a separate folder `context`, create a new file for exmaple, `MyContext.js`:
 
 ```javascript
 import { createContext } from 'react';
@@ -51,27 +22,42 @@ export default MyContext;
 
 You can also provide an initial value when creating the context:
 
-```javascript
-const MyContext = createContext(initialValue);
-```
-
 ## Consuming a Context
 
 To provide data using the context, wrap your components with a Context Provider. This should typically be done at a higher level in your component tree, such as in your `App.js` file:
 
 ```javascript
 import React from 'react';
-import MyContext from './MyContext'; // Import your context
+import MyContext from './context/MyContext'; // Import your context
 
-function App() {
+const App = () =>  {
   return (
     <MyContext.Provider value={/* Your data here */}>
-      {/* Your app components */}
+      {/* Your app childreen components */}
     </MyContext.Provider>
   );
 }
 
 export default App;
+```
+
+## Basic Usage
+
+To use the `useContext` hook, first, you need to import it along with the context you want to consume:
+
+```javascript
+import React, { useContext } from 'react';
+import MyContext from '../context/MyContext'; // Replace with your context file
+```
+
+Inside your functional component, you can consume the context as follows:
+
+```javascript
+const MyComponent = () => {
+  const contextData = useContext(MyContext);
+
+  // Now, 'contextData' contains the data provided by the Context Provider
+}
 ```
 
 ## Dynamic Context
