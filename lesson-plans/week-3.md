@@ -4,8 +4,8 @@
 
 ## Projects
 
-1. fake store
-2. Portfolio
+1. [fake store](https://dummyjson.com/docs)
+2. [Portfolio](https://mileenka.github.io/Portfolio/index.html)
 
 ## Some resources
 
