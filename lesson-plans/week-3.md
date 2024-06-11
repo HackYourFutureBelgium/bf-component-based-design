@@ -1,5 +1,6 @@
 # Week 3
 
+- [React reconciliation](../materials/reconciliation.md)
 - [React router](../materials/react-router.md)
 
 ## Projects
