@@ -1,6 +1,6 @@
 # Jsx in in React
 
-### Introduction to JSX
+## Introduction to JSX
 
 When diving into the world of React, you'll quickly encounter `JSX`, a fundamental concept that plays a pivotal role in creating dynamic user interfaces. `JSX`, which stands for JavaScript XML, is an extension to JavaScript that allows developers to write HTML-like code within their JavaScript files. This fusion of JavaScript and HTML enables a more intuitive way to define the structure and components of your React applications.
 

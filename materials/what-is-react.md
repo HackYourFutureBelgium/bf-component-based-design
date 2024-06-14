@@ -1,6 +1,6 @@
 # React Build Dynamic User Interfaces with Ease
 
-### Introduction
+## Introduction
 
 Welcome to the world of **React**, a powerful JavaScript library that empowers developers to create dynamic and interactive user interfaces with remarkable ease. In this comprehensive README, we'll delve into the core concepts of React, its advantages over traditional Vanilla JavaScript, and the various ways you can kickstart your own React project.
 
