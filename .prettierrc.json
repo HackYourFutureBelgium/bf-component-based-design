@@ -6,7 +6,18 @@
   "singleQuote": true,
   "overrides": [
     {
-      "files": ["*.html", "*.css", "*.js", "*.jsx"],
+      "files": [
+        "*.html",
+        "*.css",
+        "*.js",
+        "*.jsx",
+        "*.ts",
+        "*.tsx",
+        "*.test.js",
+        "*.test.jsx",
+        "*.test.ts",
+        "*.test.tsx"
+      ],
       "options": {
         "tabWidth": 4,
         "useTabs": false

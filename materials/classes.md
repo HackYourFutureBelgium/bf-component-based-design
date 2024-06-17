@@ -10,16 +10,16 @@ You can define a class using the `class` keyword. Here’s a simple example:
 
 ```javascript
 class Person {
-    // Class constructor
-    constructor(name, age) {
-        this.name = name;
-        this.age = age;
-    }
-    
-    // Method to display person details
-    display() {
-        console.log(`Name: ${this.name}, Age: ${this.age}`);
-    }
+  // Class constructor
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  // Method to display person details
+  display() {
+    console.log(`Name: ${this.name}, Age: ${this.age}`);
+  }
 }
 
 // Creating an instance of the Person class
@@ -33,13 +33,13 @@ The `constructor` method is a special method for creating and initializing an ob
 
 ```javascript
 class Animal {
-    constructor(name) {
-        this.name = name;
-    }
-    
-    speak() {
-        console.log(`${this.name} makes a noise.`);
-    }
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
 }
 
 const animal = new Animal('Dog');
@@ -52,13 +52,13 @@ Class methods are defined within the class body. These methods can be called on 
 
 ```javascript
 class Car {
-    constructor(brand) {
-        this.brand = brand;
-    }
+  constructor(brand) {
+    this.brand = brand;
+  }
 
-    start() {
-        console.log(`${this.brand} car is starting.`);
-    }
+  start() {
+    console.log(`${this.brand} car is starting.`);
+  }
 }
 
 const myCar = new Car('Toyota');
@@ -71,24 +71,24 @@ Classes can extend other classes using the `extends` keyword. This allows one cl
 
 ```javascript
 class Animal {
-    constructor(name) {
-        this.name = name;
-    }
-    
-    speak() {
-        console.log(`${this.name} makes a noise.`);
-    }
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
 }
 
 class Dog extends Animal {
-    constructor(name, breed) {
-        super(name); // Call the parent class constructor
-        this.breed = breed;
-    }
+  constructor(name, breed) {
+    super(name); // Call the parent class constructor
+    this.breed = breed;
+  }
 
-    speak() {
-        console.log(`${this.name} barks.`);
-    }
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
 }
 
 const myDog = new Dog('Rex', 'German Shepherd');
@@ -101,9 +101,9 @@ Static methods are called on the class itself, not on instances of the class. Th
 
 ```javascript
 class MathUtil {
-    static add(a, b) {
-        return a + b;
-    }
+  static add(a, b) {
+    return a + b;
+  }
 }
 
 console.log(MathUtil.add(5, 3)); // Output: 8
@@ -115,26 +115,26 @@ Getters and setters allow you to define methods that will be invoked when a prop
 
 ```javascript
 class Rectangle {
-    constructor(width, height) {
-        this.width = width;
-        this.height = height;
-    }
+  constructor(width, height) {
+    this.width = width;
+    this.height = height;
+  }
 
-    get area() {
-        return this.width * this.height;
-    }
+  get area() {
+    return this.width * this.height;
+  }
 
-    set width(newWidth) {
-        if (newWidth > 0) {
-            this._width = newWidth;
-        } else {
-            console.log('Width must be positive.');
-        }
+  set width(newWidth) {
+    if (newWidth > 0) {
+      this._width = newWidth;
+    } else {
+      console.log('Width must be positive.');
     }
+  }
 
-    get width() {
-        return this._width;
-    }
+  get width() {
+    return this._width;
+  }
 }
 
 const rect = new Rectangle(10, 5);
@@ -149,15 +149,15 @@ Private fields are declared with a `#` prefix. They are only accessible within t
 
 ```javascript
 class Counter {
-    #count = 0;
+  #count = 0;
 
-    increment() {
-        this.#count++;
-    }
+  increment() {
+    this.#count++;
+  }
 
-    get value() {
-        return this.#count;
-    }
+  get value() {
+    return this.#count;
+  }
 }
 
 const counter = new Counter();
@@ -171,42 +171,42 @@ Here is a complete example that demonstrates defining a class, using constructor
 
 ```javascript
 class Shape {
-    constructor(name) {
-        this.name = name;
-    }
+  constructor(name) {
+    this.name = name;
+  }
 
-    getName() {
-        return this.name;
-    }
+  getName() {
+    return this.name;
+  }
 
-    static describe() {
-        return 'This is a shape class.';
-    }
+  static describe() {
+    return 'This is a shape class.';
+  }
 }
 
 class Circle extends Shape {
-    #radius;
+  #radius;
 
-    constructor(name, radius) {
-        super(name);
-        this.#radius = radius;
-    }
+  constructor(name, radius) {
+    super(name);
+    this.#radius = radius;
+  }
 
-    get radius() {
-        return this.#radius;
-    }
+  get radius() {
+    return this.#radius;
+  }
 
-    set radius(value) {
-        if (value > 0) {
-            this.#radius = value;
-        } else {
-            console.log('Radius must be positive.');
-        }
+  set radius(value) {
+    if (value > 0) {
+      this.#radius = value;
+    } else {
+      console.log('Radius must be positive.');
     }
+  }
 
-    getArea() {
-        return Math.PI * this.#radius ** 2;
-    }
+  getArea() {
+    return Math.PI * this.#radius ** 2;
+  }
 }
 
 const circle = new Circle('My Circle', 10);

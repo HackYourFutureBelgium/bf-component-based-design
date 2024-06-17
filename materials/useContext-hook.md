@@ -57,7 +57,7 @@ const MyComponent = () => {
   const contextData = useContext(MyContext);
 
   // Now, 'contextData' contains the data provided by the Context Provider
-}
+};
 ```
 
 ## Dynamic Context

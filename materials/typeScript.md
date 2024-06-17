@@ -36,15 +36,19 @@ TypeScript provides several basic types to describe the shape and behavior of da
 ```typescript
 let isDone: boolean = true;
 let count: number = 42;
-let userName: string = "Alice";
+let userName: string = 'Alice';
 let list: number[] = [1, 2, 3, 4];
-let tuple: [string, number] = ["hello", 42];
+let tuple: [string, number] = ['hello', 42];
 
-enum Color { Red, Green, Blue }
+enum Color {
+  Red,
+  Green,
+  Blue
+}
 let c: Color = Color.Green;
 
 let notSure: any = 4;
-notSure = "maybe a string instead";
+notSure = 'maybe a string instead';
 notSure = false; // okay, definitely a boolean
 ```
 
@@ -56,16 +60,16 @@ Interfaces in TypeScript allow you to define the shape of objects. They are a po
 
 ```typescript
 interface Person {
-    firstName: string;
-    lastName: string;
-    age?: number; // Optional property
+  firstName: string;
+  lastName: string;
+  age?: number; // Optional property
 }
 
 function greet(person: Person) {
-    return `Hello, ${person.firstName} ${person.lastName}`;
+  return `Hello, ${person.firstName} ${person.lastName}`;
 }
 
-const user = { firstName: "John", lastName: "Doe" };
+const user = { firstName: 'John', lastName: 'Doe' };
 console.log(greet(user)); // Output: Hello, John Doe
 ```
 
@@ -77,18 +81,18 @@ TypeScript enhances JavaScript classes with types and visibility modifiers to su
 
 ```typescript
 class Animal {
-    private name: string;
+  private name: string;
 
-    constructor(name: string) {
-        this.name = name;
-    }
+  constructor(name: string) {
+    this.name = name;
+  }
 
-    public move(distanceInMeters: number = 0) {
-        console.log(`${this.name} moved ${distanceInMeters}m.`);
-    }
+  public move(distanceInMeters: number = 0) {
+    console.log(`${this.name} moved ${distanceInMeters}m.`);
+  }
 }
 
-let dog = new Animal("Dog");
+let dog = new Animal('Dog');
 dog.move(10);
 ```
 
@@ -100,10 +104,10 @@ Generics allow you to create reusable components that can work with various type
 
 ```typescript
 function identity<T>(arg: T): T {
-    return arg;
+  return arg;
 }
 
-let output1 = identity<string>("myString"); // type of output will be 'string'
+let output1 = identity<string>('myString'); // type of output will be 'string'
 let output2 = identity<number>(42); // type of output will be 'number'
 ```
 
@@ -111,13 +115,15 @@ let output2 = identity<number>(42); // type of output will be 'number'
 
 ```typescript
 class GenericNumber<T> {
-    zeroValue: T;
-    add: (x: T, y: T) => T;
+  zeroValue: T;
+  add: (x: T, y: T) => T;
 }
 
 let myGenericNumber = new GenericNumber<number>();
 myGenericNumber.zeroValue = 0;
-myGenericNumber.add = function(x, y) { return x + y; };
+myGenericNumber.add = function (x, y) {
+  return x + y;
+};
 ```
 
 ## Enums
@@ -128,10 +134,10 @@ Enums allow you to define a set of named constants, which can be either numeric 
 
 ```typescript
 enum Direction {
-    Up = 1,
-    Down,
-    Left,
-    Right
+  Up = 1,
+  Down,
+  Left,
+  Right
 }
 
 let dir: Direction = Direction.Up;
@@ -141,10 +147,10 @@ let dir: Direction = Direction.Up;
 
 ```typescript
 enum Direction {
-    Up = "UP",
-    Down = "DOWN",
-    Left = "LEFT",
-    Right = "RIGHT"
+  Up = 'UP',
+  Down = 'DOWN',
+  Left = 'LEFT',
+  Right = 'RIGHT'
 }
 
 let dir: Direction = Direction.Up;
@@ -159,7 +165,7 @@ Modules in TypeScript provide a way to organize and encapsulate code into self-c
 ```typescript
 // math.ts
 export function add(a: number, b: number): number {
-    return a + b;
+  return a + b;
 }
 
 // main.ts
@@ -176,10 +182,10 @@ TypeScript can automatically infer types based on values and the context in whic
 
 ```typescript
 let x = 3; // inferred to be of type number
-x = "hello"; // Error: Type 'string' is not assignable to type 'number'
+x = 'hello'; // Error: Type 'string' is not assignable to type 'number'
 
-function greet(name = "stranger") {
-    return `Hello, ${name}`;
+function greet(name = 'stranger') {
+  return `Hello, ${name}`;
 }
 
 let result = greet(); // inferred to be of type string
@@ -193,19 +199,19 @@ Decorators are a special kind of declaration that can be attached to a class, me
 
 ```typescript
 function sealed(constructor: Function) {
-    Object.seal(constructor);
-    Object.seal(constructor.prototype);
+  Object.seal(constructor);
+  Object.seal(constructor.prototype);
 }
 
 @sealed
 class Greeter {
-    greeting: string;
-    constructor(message: string) {
-        this.greeting = message;
-    }
-    greet() {
-        return `Hello, ${this.greeting}`;
-    }
+  greeting: string;
+  constructor(message: string) {
+    this.greeting = message;
+  }
+  greet() {
+    return `Hello, ${this.greeting}`;
+  }
 }
 ```
 
@@ -217,29 +223,29 @@ TypeScript provides several advanced types for creating more complex type struct
 
 ```typescript
 function printId(id: number | string) {
-    console.log(`Your ID is: ${id}`);
+  console.log(`Your ID is: ${id}`);
 }
 
 printId(101); // Output: Your ID is: 101
-printId("202"); // Output: Your ID is: 202
+printId('202'); // Output: Your ID is: 202
 ```
 
 ### Intersection Types
 
 ```typescript
 interface Person {
-    name: string;
+  name: string;
 }
 
 interface Employee {
-    employeeId: number;
+  employeeId: number;
 }
 
 type EmployeePerson = Person & Employee;
 
 let employee: EmployeePerson = {
-    name: "Jane",
-    employeeId: 1234
+  name: 'Jane',
+  employeeId: 1234
 };
 ```
 
@@ -251,14 +257,14 @@ The `tsconfig.json` file is used to configure the TypeScript compiler options.
 
 ```json
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "strict": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true
-    }
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
 }
 ```
 

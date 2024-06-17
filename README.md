@@ -199,4 +199,3 @@ The wild world of React is full of different ways to structure applications and 
    - `npm install`
 
 [TOP](#component-based-design)
-
