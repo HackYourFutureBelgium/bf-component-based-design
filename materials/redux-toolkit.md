@@ -240,3 +240,146 @@ const CounterComponent = () => {
 
 export default CounterComponent;
 ```
+
+## Fetching Users Example
+
+### Implementation
+
+This example demonstrates how to fetch users from an external API (JSONPlaceholder) using Redux Toolkit.
+
+#### 1. Create a `usersSlice`
+
+Create a file named `usersSlice.js` to define your users slice:
+
+```javascript
+// usersSlice.js
+
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+
+// Async thunk to fetch users
+export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
+  const response = await axios.get(
+    'https://jsonplaceholder.typicode.com/users'
+  );
+  return response.data;
+});
+
+// Create users slice
+const usersSlice = createSlice({
+  name: 'users',
+  initialState: {
+    users: [],
+    status: 'idle',
+    error: null
+  },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchUsers.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(fetchUsers.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.users = action.payload;
+      })
+      .addCase(fetchUsers.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
+  }
+});
+
+export default usersSlice.reducer;
+```
+
+#### 2. Configure Redux Store
+
+Add the `users` reducer to your Redux store configuration:
+
+```javascript
+// store.js
+
+import { configureStore } from '@reduxjs/toolkit';
+import appReducer from './path-to-your-app-slice/appSlice';
+import counterReducer from './path-to-your-counter-slice/counterSlice';
+import usersReducer from './path-to-your-users-slice/usersSlice';
+
+const store = configureStore({
+  reducer: {
+    app: appReducer,
+    counter: counterReducer,
+    users: usersReducer
+  }
+});
+
+export default store;
+```
+
+#### 3. Provide the Redux Store to your React App
+
+Ensure your React app is wrapped with the `Provider` component from `react-redux`:
+
+```javascript
+// index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './path-to-your-store/store';
+import App from './App';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
+```
+
+#### 4. Use the Users List in a Component
+
+Create a `UsersList` component to display the list of users:
+
+```javascript
+// UsersList.js
+
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUsers } from './path-to-your-users-slice/usersSlice';
+
+const UsersList = () => {
+  const dispatch = useDispatch();
+  const users = useSelector((state) => state.users.users);
+  const status = useSelector((state) => state.users.status);
+  const error = useSelector((state) => state.users.error);
+
+  useEffect(() => {
+    if (status === 'idle') {
+      dispatch(fetchUsers());
+    }
+  }, [status, dispatch]);
+
+  if (status === 'loading') {
+    return <div>Loading...</div>;
+  }
+
+  if (status === 'failed') {
+    return <div>Error: {error}</div>;
+  }
+
+  return (
+    <ul>
+      {users.map((user) => (
+        <li key={user.id}>{user.name}</li>
+      ))}
+    </ul>
+  );
+};
+
+export default UsersList;
+```
+
+#### 5. Use the UsersList Component in Your App
+
+Import and use the `UsersList` component in your main `App` component:
